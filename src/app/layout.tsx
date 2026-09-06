@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "TradeLens | Midpoint Strategy Screener",
-  description: "Real-time Nifty 500 Intraday Midpoint Strategy Scanner and Analysis",
+  description: "Real-time Nifty 100 Intraday Midpoint Strategy Scanner and Analysis",
 };
 
 export const viewport: Viewport = {

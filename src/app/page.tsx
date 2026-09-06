@@ -152,7 +152,7 @@ export default function Home() {
                 Trade<span className="text-emerald-400">Lens</span>
               </span>
               <span className="text-[10px] text-slate-400 tracking-wider uppercase font-medium">
-                Nifty 500 Scanner
+                Nifty 100 Scanner
               </span>
             </div>
           </div>
@@ -168,7 +168,7 @@ export default function Home() {
               <button
                 onClick={runScreener}
                 disabled={loading}
-                title="Rescan Nifty 500"
+                title="Rescan Nifty 100"
                 className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-slate-200 bg-slate-900 hover:bg-slate-800 border border-white/10 rounded-lg transition-colors disabled:opacity-50"
               >
                 <RefreshCw className={`w-3.5 h-3.5 ${loading ? "animate-spin" : ""}`} />
@@ -192,7 +192,7 @@ export default function Home() {
               Midpoint Strategy Screener
             </h1>
             <p className="text-sm sm:text-base md:text-lg text-slate-400 max-w-2xl mx-auto leading-relaxed">
-              Real-time scanner filtering <span className="text-emerald-400 font-medium">Nifty 500</span> equities based on yesterday&apos;s candle midpoint momentum setups.
+              Real-time scanner filtering <span className="text-emerald-400 font-medium">Nifty 100</span> equities based on yesterday&apos;s candle midpoint momentum setups.
             </p>
           </div>
 
@@ -235,7 +235,7 @@ export default function Home() {
               ) : (
                 <Search className="w-5 h-5 transition-transform group-hover:scale-110" />
               )}
-              <span>{loading ? "Scanning Nifty 500..." : "Run Screener Now"}</span>
+              <span>{loading ? "Scanning Nifty 100..." : "Run Screener Now"}</span>
             </button>
           </div>
         </div>
@@ -297,22 +297,20 @@ export default function Home() {
                 <div className="flex items-center gap-1.5 p-1 bg-slate-900/80 border border-white/5 rounded-xl w-fit">
                   <button
                     onClick={() => setViewMode("grid")}
-                    className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg transition-colors ${
-                      viewMode === "grid"
-                        ? "bg-slate-800 text-white shadow-sm"
-                        : "text-slate-400 hover:text-slate-200"
-                    }`}
+                    className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg transition-colors ${viewMode === "grid"
+                      ? "bg-slate-800 text-white shadow-sm"
+                      : "text-slate-400 hover:text-slate-200"
+                      }`}
                   >
                     <LayoutGrid className="w-3.5 h-3.5" />
                     <span>Cards</span>
                   </button>
                   <button
                     onClick={() => setViewMode("table")}
-                    className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg transition-colors ${
-                      viewMode === "table"
-                        ? "bg-slate-800 text-white shadow-sm"
-                        : "text-slate-400 hover:text-slate-200"
-                    }`}
+                    className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium rounded-lg transition-colors ${viewMode === "table"
+                      ? "bg-slate-800 text-white shadow-sm"
+                      : "text-slate-400 hover:text-slate-200"
+                      }`}
                   >
                     <List className="w-3.5 h-3.5" />
                     <span>Table</span>
@@ -356,7 +354,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-lg sm:text-xl font-semibold text-white mb-1">No Matches Found</h3>
                 <p className="text-xs sm:text-sm text-slate-400 max-w-sm">
-                  None of the Nifty 500 stocks currently match the midpoint strategy criteria today.
+                  None of the Nifty 100 stocks currently match the midpoint strategy criteria today.
                 </p>
               </div>
             ) : (
@@ -365,18 +363,16 @@ export default function Home() {
                 <div className="w-full sm:w-fit grid grid-cols-2 sm:flex p-1 bg-slate-900 border border-white/10 rounded-2xl mx-auto lg:mx-0">
                   <button
                     onClick={() => setActiveTab("bullish")}
-                    className={`flex items-center justify-center gap-2 px-3 sm:px-6 py-2.5 sm:py-3 rounded-xl font-semibold text-xs sm:text-sm transition-all ${
-                      activeTab === "bullish"
-                        ? "bg-emerald-500/20 text-emerald-400 shadow-[0_0_20px_rgba(16,185,129,0.15)] border border-emerald-500/30"
-                        : "text-slate-400 hover:text-slate-200 hover:bg-white/5 border border-transparent"
-                    }`}
+                    className={`flex items-center justify-center gap-2 px-3 sm:px-6 py-2.5 sm:py-3 rounded-xl font-semibold text-xs sm:text-sm transition-all ${activeTab === "bullish"
+                      ? "bg-emerald-500/20 text-emerald-400 shadow-[0_0_20px_rgba(16,185,129,0.15)] border border-emerald-500/30"
+                      : "text-slate-400 hover:text-slate-200 hover:bg-white/5 border border-transparent"
+                      }`}
                   >
                     <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
                     <span className="truncate">Bullish Setup</span>
                     <span
-                      className={`ml-1 px-1.5 sm:px-2 py-0.5 text-[10px] sm:text-xs rounded-full shrink-0 ${
-                        activeTab === "bullish" ? "bg-emerald-500/20 text-emerald-300 font-bold" : "bg-slate-800 text-slate-400"
-                      }`}
+                      className={`ml-1 px-1.5 sm:px-2 py-0.5 text-[10px] sm:text-xs rounded-full shrink-0 ${activeTab === "bullish" ? "bg-emerald-500/20 text-emerald-300 font-bold" : "bg-slate-800 text-slate-400"
+                        }`}
                     >
                       {totalBullish}
                     </span>
@@ -384,18 +380,16 @@ export default function Home() {
 
                   <button
                     onClick={() => setActiveTab("bearish")}
-                    className={`flex items-center justify-center gap-2 px-3 sm:px-6 py-2.5 sm:py-3 rounded-xl font-semibold text-xs sm:text-sm transition-all ${
-                      activeTab === "bearish"
-                        ? "bg-rose-500/20 text-rose-400 shadow-[0_0_20px_rgba(244,63,94,0.15)] border border-rose-500/30"
-                        : "text-slate-400 hover:text-slate-200 hover:bg-white/5 border border-transparent"
-                    }`}
+                    className={`flex items-center justify-center gap-2 px-3 sm:px-6 py-2.5 sm:py-3 rounded-xl font-semibold text-xs sm:text-sm transition-all ${activeTab === "bearish"
+                      ? "bg-rose-500/20 text-rose-400 shadow-[0_0_20px_rgba(244,63,94,0.15)] border border-rose-500/30"
+                      : "text-slate-400 hover:text-slate-200 hover:bg-white/5 border border-transparent"
+                      }`}
                   >
                     <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5 rotate-90 transform shrink-0" />
                     <span className="truncate">Bearish Setup</span>
                     <span
-                      className={`ml-1 px-1.5 sm:px-2 py-0.5 text-[10px] sm:text-xs rounded-full shrink-0 ${
-                        activeTab === "bearish" ? "bg-rose-500/20 text-rose-300 font-bold" : "bg-slate-800 text-slate-400"
-                      }`}
+                      className={`ml-1 px-1.5 sm:px-2 py-0.5 text-[10px] sm:text-xs rounded-full shrink-0 ${activeTab === "bearish" ? "bg-rose-500/20 text-rose-300 font-bold" : "bg-slate-800 text-slate-400"
+                        }`}
                     >
                       {totalBearish}
                     </span>
@@ -407,9 +401,8 @@ export default function Home() {
                   {/* Section Title Header */}
                   <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-5">
                     <h3
-                      className={`text-base sm:text-lg md:text-xl font-bold flex items-center gap-2 ${
-                        activeTab === "bullish" ? "text-emerald-400" : "text-rose-400"
-                      }`}
+                      className={`text-base sm:text-lg md:text-xl font-bold flex items-center gap-2 ${activeTab === "bullish" ? "text-emerald-400" : "text-rose-400"
+                        }`}
                     >
                       {activeTab === "bullish" ? (
                         <>
@@ -443,23 +436,23 @@ export default function Home() {
                         const isBullish = activeTab === "bullish";
                         const theme = isBullish
                           ? {
-                              text: "text-emerald-400",
-                              border: "border-emerald-500/20",
-                              hoverBorder: "hover:border-emerald-500/35",
-                              bg: "bg-emerald-500/10",
-                              badgeBg: "bg-emerald-500/15",
-                              badgeBorder: "border-emerald-500/30",
-                              iconColor: "text-emerald-500",
-                            }
+                            text: "text-emerald-400",
+                            border: "border-emerald-500/20",
+                            hoverBorder: "hover:border-emerald-500/35",
+                            bg: "bg-emerald-500/10",
+                            badgeBg: "bg-emerald-500/15",
+                            badgeBorder: "border-emerald-500/30",
+                            iconColor: "text-emerald-500",
+                          }
                           : {
-                              text: "text-rose-400",
-                              border: "border-rose-500/20",
-                              hoverBorder: "hover:border-rose-500/35",
-                              bg: "bg-rose-500/10",
-                              badgeBg: "bg-rose-500/15",
-                              badgeBorder: "border-rose-500/30",
-                              iconColor: "text-rose-500",
-                            };
+                            text: "text-rose-400",
+                            border: "border-rose-500/20",
+                            hoverBorder: "hover:border-rose-500/35",
+                            bg: "bg-rose-500/10",
+                            badgeBg: "bg-rose-500/15",
+                            badgeBorder: "border-rose-500/30",
+                            iconColor: "text-rose-500",
+                          };
 
                         return (
                           <div
@@ -469,9 +462,8 @@ export default function Home() {
                             {/* Watermark Icon */}
                             <div className="absolute top-0 right-0 p-3 opacity-5 group-hover:opacity-15 transition-opacity pointer-events-none">
                               <TrendingUp
-                                className={`w-20 h-20 ${theme.iconColor} ${
-                                  !isBullish ? "rotate-90" : "-rotate-12"
-                                } transform translate-x-3 -translate-y-3`}
+                                className={`w-20 h-20 ${theme.iconColor} ${!isBullish ? "rotate-90" : "-rotate-12"
+                                  } transform translate-x-3 -translate-y-3`}
                               />
                             </div>
 
@@ -598,9 +590,8 @@ export default function Home() {
                                   {cleanSymbol}
                                 </td>
                                 <td
-                                  className={`px-4 py-3.5 font-bold whitespace-nowrap ${
-                                    isBullish ? "text-emerald-400" : "text-rose-400"
-                                  }`}
+                                  className={`px-4 py-3.5 font-bold whitespace-nowrap ${isBullish ? "text-emerald-400" : "text-rose-400"
+                                    }`}
                                 >
                                   ₹{stock.currentPrice.toFixed(2)}
                                 </td>
@@ -608,9 +599,8 @@ export default function Home() {
                                   ₹{stock.prevOpen.toFixed(2)}
                                 </td>
                                 <td
-                                  className={`px-4 py-3.5 whitespace-nowrap font-mono font-medium ${
-                                    isBullish ? "text-emerald-400" : "text-rose-400"
-                                  }`}
+                                  className={`px-4 py-3.5 whitespace-nowrap font-mono font-medium ${isBullish ? "text-emerald-400" : "text-rose-400"
+                                    }`}
                                 >
                                   ₹{stock.prevClose.toFixed(2)}
                                 </td>
@@ -618,19 +608,17 @@ export default function Home() {
                                   ₹{stock.midPoint.toFixed(2)}
                                 </td>
                                 <td
-                                  className={`px-4 py-3.5 whitespace-nowrap font-mono font-bold ${
-                                    isBullish ? "text-emerald-400" : "text-rose-400"
-                                  }`}
+                                  className={`px-4 py-3.5 whitespace-nowrap font-mono font-bold ${isBullish ? "text-emerald-400" : "text-rose-400"
+                                    }`}
                                 >
                                   ₹{stock.todayOpen.toFixed(2)}
                                 </td>
                                 <td className="px-4 py-3.5 whitespace-nowrap">
                                   <span
-                                    className={`px-2 py-0.5 text-[10px] font-bold rounded uppercase ${
-                                      isBullish
-                                        ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
-                                        : "bg-rose-500/10 text-rose-400 border border-rose-500/20"
-                                    }`}
+                                    className={`px-2 py-0.5 text-[10px] font-bold rounded uppercase ${isBullish
+                                      ? "bg-emerald-500/10 text-emerald-400 border border-emerald-500/20"
+                                      : "bg-rose-500/10 text-rose-400 border border-rose-500/20"
+                                      }`}
                                   >
                                     {isBullish ? "Bullish" : "Bearish"}
                                   </span>
